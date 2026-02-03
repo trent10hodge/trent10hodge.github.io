@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Taniti | Plan with Confidence</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Minimal styles for search bar */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .search-bar input {
+      padding: 0.5rem;
+      width: 60%;
+      max-width: 400px;
+      font-size: 1rem;
+    }
+    .search-bar button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+    .highlight {
+      background-color: #A4F07E;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Visit Taniti</h1>
+  <p>Your guide to a relaxed, well-planned island getaway</p>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="site-search" placeholder="Search for activities, lodging, tips..." />
+    <button onclick="searchSite()">Search</button>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <a href="itineraries.html">Plan</a>
+  <a href="transportation.html">Transport</a>
+  <a href="lodging.html">Stay</a>
+  <a href="things-to-do.html">Explore</a>
+  <a href="tips.html">Tips</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Beaches. Rainforests. Volcano Views.</h2>
+    <p>Everything you need to plan your first visit—without stress.</p>
+    <a href="#plan" class="primary-btn">Start Planning</a>
+  </div>
+</section>
+
+<section id="plan" class="content-section">
+  <h2>Suggested Itineraries</h2>
+  <p class="section-intro">
+    Choose a trip length and expand the details when you’re ready.
+  </p>
+
+  <div class="itinerary">
+    <button class="itinerary-toggle">3-Day Trip Overview</button>
+    <ul class="itinerary-content">
+      <li>Day 1: Taniti City & beaches</li>
+      <li>Day 2: Rainforest hike & zip-lining</li>
+      <li>Day 3: Volcano tour & local dining</li>
+    </ul>
+  </div>
+
+  <div class="itinerary">
+    <button class="itinerary-toggle">5-Day Trip Overview</button>
+    <ul class="itinerary-content">
+      <li>Beaches, rainforest, volcano, culture, and leisure</li>
+    </ul>
+  </div>
+
+  <div class="itinerary">
+    <button class="itinerary-toggle">7-Day Trip Overview</button>
+    <ul class="itinerary-content">
+      <li>Relaxed pacing with full island exploration</li>
+    </ul>
+  </div>
+</section>
+
+<section id="getting-around" class="content-section alt">
+  <h2>Transportation</h2>
+  <div class="card-grid">
+    <div class="info-card">
+      <h3>🚶 Walkable Areas</h3>
+      <p>Taniti City and Merriton Landing are pedestrian-friendly.</p>
+    </div>
+    <div class="info-card">
+      <h3>🚌 Public Transit</h3>
+      <p>Reliable buses run daily from early morning to late night.</p>
+    </div>
+    <div class="info-card">
+      <h3>🚗 Rentals</h3>
+      <p>Cars and bikes available near the airport.</p>
+    </div>
+    <div class="info-card">
+      <h3>🚕 Taxis</h3>
+      <p>Best option for evenings or guided excursions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="lodging" class="content-section">
+  <h2>Lodging</h2>
+  <div class="card-grid">
+    <div class="info-card">
+      <h3>Family Hotels</h3>
+      <p>Comfortable, affordable, and locally operated.</p>
+    </div>
+    <div class="info-card">
+      <h3>Beach B&Bs</h3>
+      <p>Great views and relaxed atmospheres.</p>
+    </div>
+    <div class="info-card">
+      <h3>4-Star Resort</h3>
+      <p>Luxury amenities and concierge services.</p>
+    </div>
+  </div>
+</section>
+
+<section id="things-to-do" class="content-section alt">
+  <h2>Activities</h2>
+  <div class="card-grid">
+    <div class="info-card">🏖️ Beaches & Snorkeling</div>
+    <div class="info-card">🌿 Rainforest Adventures</div>
+    <div class="info-card">🌋 Volcano Tours</div>
+    <div class="info-card">🎨 Culture & Museums</div>
+  </div>
+</section>
+
+<section id="tips" class="content-section">
+  <h2>Travel Tips & Safety</h2>
+  <ul class="tips-list">
+    <li>U.S. power outlets and currency accepted</li>
+    <li>Alcohol sales restricted 12am–9am</li>
+    <li>English widely spoken in tourist areas</li>
+    <li>Plan ahead for holiday closures</li>
+    <li>Keep valuables secure in busy areas</li>
+  </ul>
+</section>
+
+<footer class="site-footer">
+  <p>Visit Taniti • Plan smart, travel easy</p>
+  <h2>Citations</h2>
+  <ul>
+  <li>PNGTree. (n.d.). Rainforest background image [Image]. PNGTree. https://pngtree.com/free-backgrounds-photos/rainforest-pictures</li>
+  </ul>
+</footer>
+
+<script>
+  // Search functionality
+  function searchSite() {
+    const query = document.getElementById('site-search').value.toLowerCase();
+    const sections = document.querySelectorAll('.content-section, .card-grid, .itinerary-content, .info-card, .tips-list li');
+
+    // Clear previous highlights
+    sections.forEach(el => el.classList.remove('highlight'));
+
+    // Highlight matching sections/items
+    sections.forEach(el => {
+      if (el.textContent.toLowerCase().includes(query) && query.trim() !== '') {
+        el.classList.add('highlight');
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+
+  document.getElementById('site-search').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      searchSite();
+    }
+  });
+
+  // Itinerary toggle functionality
+  document.querySelectorAll('.itinerary-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  });
+
+  // Hide all itinerary contents by default
+  document.querySelectorAll('.itinerary-content').forEach(ul => {
+    ul.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

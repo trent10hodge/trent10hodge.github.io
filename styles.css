@@ -1,0 +1,129 @@
+:root {
+  --blue: #0077b6;
+  --teal: #00b4d8;
+  --sand: #fefae0;
+  --green: #2a9d8f;
+  --dark: #023047;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--dark);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  padding: 1.5rem;
+  text-align: center;
+  background: #A4F07E;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ), url("rainforest.jfif") center / cover no-repeat;
+  color: white;
+  padding: 5rem 1rem;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.primary-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--teal);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Sections */
+.content-section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.content-section.alt {
+  background: #f4fdfc;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Itinerary */
+.itinerary-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.itinerary-content {
+  display: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Tips */
+.tips-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--dark);
+  color: white;
+}
